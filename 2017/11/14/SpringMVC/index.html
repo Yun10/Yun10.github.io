@@ -88,7 +88,7 @@
 <meta property="og:description" content="前端控制器（web.xml DispatcherServlet）  处理器映射器和自定义bean(实例化)  处理器适配器(执行handler方法) 视图解析器  注解开发：Springmvc.xml的配置Controller接收各种参数类型restfull Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controll">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://yun10.github.io/img/springmvc1.png">
-<meta property="og:updated_time" content="2017-11-17T07:35:20.693Z">
+<meta property="og:updated_time" content="2017-11-17T07:38:18.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springmvc笔记(一)">
 <meta name="twitter:description" content="前端控制器（web.xml DispatcherServlet）  处理器映射器和自定义bean(实例化)  处理器适配器(执行handler方法) 视图解析器  注解开发：Springmvc.xml的配置Controller接收各种参数类型restfull Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controll">
@@ -357,7 +357,10 @@
 <h2 id="SpringMVC执行流程"><a href="#SpringMVC执行流程" class="headerlink" title="SpringMVC执行流程"></a>SpringMVC执行流程</h2><p>用户请求—&gt;控制器拦截(DispatcherServlet，配置在web.xml中)—&gt;处理器映射器(handlermapping)找到对应于的执行类(springmvc.xml)并返回结果—&gt;控制器调用处理器适配器(handlerAdapter)实例化执行类返回ModeAndView—&gt;将返回的结果解析到视图(springmvc.xml)—&gt;控制器返回给用户。<br><img src="/img/springmvc1.png" alt="SpringMVC执行流程"></p>
 <h2 id="处理器映射器-HandlerMapping"><a href="#处理器映射器-HandlerMapping" class="headerlink" title="处理器映射器(HandlerMapping)"></a>处理器映射器(HandlerMapping)</h2><p>用来寻找Controller的位置</p>
 <h2 id="处理器适配器-HandlerAdapter"><a href="#处理器适配器-HandlerAdapter" class="headerlink" title="处理器适配器(HandlerAdapter)"></a>处理器适配器(HandlerAdapter)</h2><p>执行Controller<br>如SimpleControllerHandlerAdapter、HttpRequestHandlerAdapter，采用适配器设计模式；</p>
-<h2 id="命令控制器"><a href="#命令控制器" class="headerlink" title="命令控制器"></a>命令控制器</h2><p>Springmvc通过命令设计模式接受页面参数。<br>命令设计模式：将请求封装成命令对象，请求的具体执行由命令接收者执行；<br><a href="(https://www.cnblogs.com/chenpi/p/5216488.html)">命令设计模式详解</a></p>
+<h2 id="命令控制器"><a href="#命令控制器" class="headerlink" title="命令控制器"></a>命令控制器</h2><p>Springmvc通过命令设计模式接受页面参数。<br>命令设计模式：将请求封装成命令对象，请求的具体执行由命令接收者执行；  </p>
+<blockquote>
+<p>参考资料<br><a href="(https://www.cnblogs.com/chenpi/p/5216488.html)">命令设计模式</a></p>
+</blockquote>
 
       
     </div>
