@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="前端控制器（web.xml DispatcherServlet）  处理器映射器和自定义bean(实例化)  处理器适配器(执行handler方法) 视图解析器  注解开发：Springmvc.xml的配置Controller接收各种参数类型restfull Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controll">
+<meta name="description" content="Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controller)用来接收和转发请求，模型层(Model)对数据进行处理，视图层(View)将结果组装到页面返回给控制层。 SpringMVC执行流程用户请求—&amp;gt;控制器拦截(DispatcherServlet，配置在web.xml中)—&amp;gt;处理器映射器(hand">
 <meta name="keywords" content="SpringMVC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Springmvc笔记(一)">
 <meta property="og:url" content="https://yun10.github.io/2017/11/14/SpringMVC/index.html">
 <meta property="og:site_name" content="Yun10&#39;s Blog">
-<meta property="og:description" content="前端控制器（web.xml DispatcherServlet）  处理器映射器和自定义bean(实例化)  处理器适配器(执行handler方法) 视图解析器  注解开发：Springmvc.xml的配置Controller接收各种参数类型restfull Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controll">
+<meta property="og:description" content="Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controller)用来接收和转发请求，模型层(Model)对数据进行处理，视图层(View)将结果组装到页面返回给控制层。 SpringMVC执行流程用户请求—&amp;gt;控制器拦截(DispatcherServlet，配置在web.xml中)—&amp;gt;处理器映射器(hand">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://yun10.github.io/img/springmvc1.png">
-<meta property="og:updated_time" content="2017-11-17T07:44:34.620Z">
+<meta property="og:updated_time" content="2017-11-17T07:47:30.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springmvc笔记(一)">
-<meta name="twitter:description" content="前端控制器（web.xml DispatcherServlet）  处理器映射器和自定义bean(实例化)  处理器适配器(执行handler方法) 视图解析器  注解开发：Springmvc.xml的配置Controller接收各种参数类型restfull Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controll">
+<meta name="twitter:description" content="Springmvc笔记mvc框架模式mvc的框架模式的目的：解耦合。mvc的设计思想：任何重定向都能解耦。mvc中控制层(Controller)用来接收和转发请求，模型层(Model)对数据进行处理，视图层(View)将结果组装到页面返回给控制层。 SpringMVC执行流程用户请求—&amp;gt;控制器拦截(DispatcherServlet，配置在web.xml中)—&amp;gt;处理器映射器(hand">
 <meta name="twitter:image" content="https://yun10.github.io/img/springmvc1.png">
 
 
@@ -344,15 +344,15 @@
       
 
       
-        <ol>
-<li><p>前端控制器（web.xml DispatcherServlet）</p>
-</li>
-<li><p>处理器映射器和自定义bean(实例化)</p>
-</li>
-<li>处理器适配器(执行handler方法)</li>
-<li>视图解析器</li>
-</ol>
-<p>注解开发：Springmvc.xml的配置<br>Controller接收各种参数类型<br>restfull</p>
+        <!-- 1. 前端控制器（web.xml DispatcherServlet）
+
+2. 处理器映射器和自定义bean(实例化)
+3. 处理器适配器(执行handler方法)
+4. 视图解析器
+
+注解开发：Springmvc.xml的配置
+Controller接收各种参数类型
+restfull -->
 <h1 id="Springmvc笔记"><a href="#Springmvc笔记" class="headerlink" title="Springmvc笔记"></a>Springmvc笔记</h1><h2 id="mvc框架模式"><a href="#mvc框架模式" class="headerlink" title="mvc框架模式"></a>mvc框架模式</h2><p>mvc的框架模式的目的：解耦合。<br>mvc的设计思想：任何重定向都能解耦。<br>mvc中控制层(Controller)用来接收和转发请求，模型层(Model)对数据进行处理，视图层(View)将结果组装到页面返回给控制层。</p>
 <h2 id="SpringMVC执行流程"><a href="#SpringMVC执行流程" class="headerlink" title="SpringMVC执行流程"></a>SpringMVC执行流程</h2><p>用户请求—&gt;控制器拦截(DispatcherServlet，配置在web.xml中)—&gt;处理器映射器(handlermapping)找到对应于的执行类(springmvc.xml)并返回结果—&gt;控制器调用处理器适配器(handlerAdapter)实例化执行类返回ModeAndView—&gt;将返回的结果解析到视图(springmvc.xml)—&gt;控制器返回给用户。<br><img src="/img/springmvc1.png" alt="SpringMVC执行流程"></p>
 <h2 id="处理器映射器-HandlerMapping"><a href="#处理器映射器-HandlerMapping" class="headerlink" title="处理器映射器(HandlerMapping)"></a>处理器映射器(HandlerMapping)</h2><p>用来寻找Controller的位置</p>
